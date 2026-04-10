@@ -1,21 +1,38 @@
+import { useRef, useEffect } from 'react';
+
 export default function Arena() {
+  const fitTextRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const fit = () => {
+      // Measure using a temp element appended to body (bypasses any overflow constraints)
+      const temp = document.createElement('span');
+      temp.style.cssText = `
+        position: absolute; top: -9999px; left: -9999px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 900; font-style: italic;
+        font-size: 100px; white-space: nowrap;
+        letter-spacing: -0.05em; text-transform: uppercase;
+        visibility: hidden; pointer-events: none;
+      `;
+      temp.textContent = 'THE ALIVE ROBOTS';
+      document.body.appendChild(temp);
+      const naturalWidth = temp.getBoundingClientRect().width;
+      document.body.removeChild(temp);
+
+      const fontSize = (window.innerWidth / naturalWidth) * 100;
+      if (fitTextRef.current) {
+        fitTextRef.current.style.fontSize = `${fontSize}px`;
+      }
+    };
+    fit();
+    window.addEventListener('resize', fit);
+    return () => window.removeEventListener('resize', fit);
+  }, []);
   return (
     <main className="pt-32 pb-32 overflow-hidden bg-[url('https://transparent-pattern.svg')]">
       <section className="relative min-h-[85vh] flex flex-col items-center justify-center px-6 text-center overflow-hidden">
-        {/* Grok-style massive background text */}
-        <div className="absolute inset-0 flex items-end justify-center pointer-events-none select-none overflow-hidden z-0">
-          <span
-            className="font-headline font-black uppercase italic whitespace-nowrap leading-none tracking-tighter"
-            style={{
-              fontSize: '18vw',
-              color: 'transparent',
-              WebkitTextStroke: '1.5px rgba(0,255,65,0.18)',
-              userSelect: 'none',
-            }}
-          >
-            THE ALIVE ROBOTS
-          </span>
-        </div>
+
         <div className="relative z-10 max-w-6xl w-full">
           <div className="inline-block px-4 py-1 mb-6 border border-primary/30 bg-primary/5 rounded-full">
             <span className="font-label text-[10px] tracking-[0.3em] font-bold text-primary">THE ALIVE ROBOTS // v2.0</span>
@@ -29,7 +46,7 @@ export default function Arena() {
 
           <div className="relative perspective-card group mb-16">
             <div className="relative w-full aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden border border-white/10 shadow-3d-glow transition-all duration-500 group-hover:scale-[1.02] bg-neutral-900">
-              <img alt="Futuristic line follower robot" className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3ScpS9t4kHatGU5eoe96af9WMggcC9O5GvysDBxE1vOB7Dwt-NG5AYHYssPr8hzcGuPhfnGlm3dGxHcKExlBVMrmhq8Ne3evSMsAjmtYu3jgOl4G4iWejcChiwklcJ_q8qXQUOKyU7uVxY5hnU4KmCF6vpltaUoxwowEPygxxLSZGp6wwArVC4OjDqxIfz1QXP-duP-QlnkP6GU56NqyxQGtOnQzphTdnpzUtJm5lT8hJG8UZfFGoEs-pTlW8LbJQyXPU3V6u-iRg"/>
+              <img alt="3D Line Follower Robot Car" className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-110" src="/robot_car.png"/>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
               
               <div className="absolute inset-0 p-8 flex flex-col justify-between pointer-events-none">
@@ -176,6 +193,22 @@ export default function Arena() {
           </div>
         </div>
       </section>
+
+      {/* Bottom page text — FitText */}
+      <div className="w-full overflow-hidden pointer-events-none select-none">
+        <span
+          ref={fitTextRef}
+          className="font-headline font-black uppercase italic whitespace-nowrap leading-none tracking-tighter block text-center"
+          style={{
+            color: 'transparent',
+            WebkitTextStroke: '1.5px rgba(0,255,65,0.18)',
+            userSelect: 'none',
+            lineHeight: '0.85',
+          }}
+        >
+          THE ALIVE ROBOTS
+        </span>
+      </div>
     </main>
   );
 }
