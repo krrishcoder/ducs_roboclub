@@ -146,6 +146,137 @@ export default function Arena() {
         </div>
       </section>
 
+      {/* Origins Timeline Section */}
+      <section className="max-w-7xl mx-auto px-6 py-32 border-t border-white/5 relative">
+        {/* Ambient background glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-primary/5 blur-[120px] rounded-[100%] pointer-events-none"></div>
+
+        <div className="flex flex-col md:flex-row gap-8 items-end justify-between mb-24 border-b border-primary/20 pb-12 relative z-10">
+          <div className="max-w-3xl">
+            <h3 className="font-label text-[10px] text-primary uppercase tracking-[0.4em] mb-4 font-black flex items-center gap-3">
+              <span className="w-1.5 h-1.5 bg-primary"></span>
+              ARCHIVE_DECRYPT: ORIGIN_STORY
+            </h3>
+            <h2 className="font-headline text-5xl md:text-7xl font-black tracking-tighter text-white uppercase italic mb-6 leading-none">HOW WE STARTED</h2>
+            <p className="text-on-surface-variant font-body text-xl leading-relaxed">From raw components on basic desks to the adrenaline-fueled DUCS Arena. Here is the operational history that forged the Robo Club.</p>
+          </div>
+        </div>
+
+        <div className="relative z-10 pl-4 md:pl-12">
+          {/* Timeline Line */}
+          <div className="absolute left-[20px] md:left-[52px] top-4 bottom-4 w-1 bg-gradient-to-b from-primary via-primary/20 to-transparent shadow-[0_0_15px_rgba(0,255,65,0.5)]"></div>
+
+          <div className="flex flex-col gap-24">
+            
+            {/* Timeline Item 1 */}
+            <div className="relative group flex flex-col md:flex-row gap-12 items-start md:items-center">
+              <div className="absolute -left-[5px] md:-left-[5px] top-6 md:top-1/2 md:-translate-y-1/2 w-6 h-6 bg-black border-2 border-primary rotate-45 group-hover:bg-primary transition-all duration-300 z-10 shadow-[0_0_20px_rgba(0,255,65,0.4)]"></div>
+              
+              <div className="ml-12 md:ml-20 flex-1 bg-[#111111] p-8 rounded-2xl border border-white/5 hover:border-primary/40 transition-colors shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                  <span className="font-headline text-9xl italic font-black">01</span>
+                </div>
+                <div className="flex flex-col gap-2 mb-6 relative z-10">
+                  <span className="font-label text-[10px] text-primary tracking-widest uppercase font-bold">Genesis_Phase</span>
+                  <h4 className="font-headline text-3xl font-bold tracking-tight text-white uppercase italic">THE SQUAD ASSEMBLES</h4>
+                  <p className="font-body text-on-surface-variant leading-relaxed text-lg max-w-xl">Five minds, zero budget, and infinite ambition. Armed with basic tools, tapes, cardboard, and sheer willpower in the DUCS classrooms.</p>
+                </div>
+              </div>
+              
+              <div className="md:flex-1 ml-12 md:ml-0 md:pl-8 relative group cursor-pointer w-full max-w-md">
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl mix-blend-overlay z-10"></div>
+                <img src="/origin_team.jpg" alt="The original Robo Club team" className="bg-neutral-900 w-full aspect-[4/3] object-cover rounded-xl border border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] grayscale group-hover:grayscale-0" />
+              </div>
+            </div>
+
+            {/* Timeline Item 2 */}
+            <div className="relative group flex flex-col md:flex-row gap-12 items-start md:items-center">
+              <div className="absolute -left-[5px] md:-left-[5px] top-6 md:top-1/2 md:-translate-y-1/2 w-6 h-6 bg-black border-2 border-primary rotate-45 group-hover:bg-primary transition-all duration-300 z-10 shadow-[0_0_20px_rgba(0,255,65,0.4)]"></div>
+              
+              <div className="ml-12 md:ml-20 flex-1 bg-[#111111] p-8 rounded-2xl border border-white/5 hover:border-primary/40 transition-colors shadow-2xl relative overflow-hidden md:order-2">
+                <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                  <span className="font-headline text-9xl italic font-black">02</span>
+                </div>
+                <div className="flex flex-col gap-2 mb-6 relative z-10">
+                  <span className="font-label text-[10px] text-primary tracking-widest uppercase font-bold">Hardware_Integration</span>
+                  <h4 className="font-headline text-3xl font-bold tracking-tight text-white uppercase italic">CIRCUITRY &amp; RAW STEEL</h4>
+                  <p className="font-body text-on-surface-variant leading-relaxed text-lg max-w-xl">From scattered breadboards, jumper wires, to raw DC motors. Late nights spent soldering and mapping the logic that would bring the beast to life.</p>
+                </div>
+              </div>
+              
+              <div className="md:flex-1 ml-12 md:ml-0 md:pr-8 relative group cursor-pointer w-full max-w-md md:order-1">
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl mix-blend-overlay z-10"></div>
+                <img src="/origin_hardware.jpg" alt="Initial hardware components" className="bg-neutral-900 w-full aspect-[4/3] object-cover rounded-xl border border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] grayscale group-hover:grayscale-0" />
+              </div>
+            </div>
+
+            {/* Timeline Item 3 */}
+            <div className="relative group flex flex-col md:flex-row gap-12 items-start md:items-center">
+              <div className="absolute -left-[5px] md:-left-[5px] top-6 md:top-1/2 md:-translate-y-1/2 w-6 h-6 bg-black border-2 border-primary rotate-45 group-hover:bg-primary transition-all duration-300 z-10 shadow-[0_0_20px_rgba(0,255,65,0.4)]"></div>
+              
+              <div className="ml-12 md:ml-20 flex-1 bg-[#111111] p-8 rounded-2xl border border-white/5 hover:border-primary/40 transition-colors shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                  <span className="font-headline text-9xl italic font-black">03</span>
+                </div>
+                <div className="flex flex-col gap-2 mb-6 relative z-10">
+                  <span className="font-label text-[10px] text-primary tracking-widest uppercase font-bold">First_Prototype</span>
+                  <h4 className="font-headline text-3xl font-bold tracking-tight text-white uppercase italic">DHANNO [LFR]</h4>
+                  <p className="font-body text-on-surface-variant leading-relaxed text-lg max-w-xl">The original Line Follower Robot (LFR). Built with a raw cardboard chassis, pure ambition, and pure hardware logic to trace the tracks.</p>
+                </div>
+              </div>
+              
+              <div className="md:flex-1 ml-12 md:ml-0 md:pl-8 relative group cursor-pointer w-full max-w-md">
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl mix-blend-overlay z-10"></div>
+                <img src="/origin_dhanno1.jpg" alt="Dhanno 1.0 LFR Robot" className="bg-neutral-900 w-full aspect-[4/3] object-cover rounded-xl border border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] grayscale group-hover:grayscale-0" />
+              </div>
+            </div>
+
+            {/* Timeline Item 4 */}
+            <div className="relative group flex flex-col md:flex-row gap-12 items-start md:items-center">
+              <div className="absolute -left-[5px] md:-left-[5px] top-6 md:top-1/2 md:-translate-y-1/2 w-6 h-6 bg-black border-2 border-primary rotate-45 group-hover:bg-primary transition-all duration-300 z-10 shadow-[0_0_20px_rgba(0,255,65,0.4)]"></div>
+              
+              <div className="ml-12 md:ml-20 flex-1 bg-[#111111] p-8 rounded-2xl border border-white/5 hover:border-primary/40 transition-colors shadow-2xl relative overflow-hidden md:order-2">
+                <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                  <span className="font-headline text-9xl italic font-black">04</span>
+                </div>
+                <div className="flex flex-col gap-2 mb-6 relative z-10">
+                  <span className="font-label text-[10px] text-primary tracking-widest uppercase font-bold">Evolution</span>
+                  <h4 className="font-headline text-3xl font-bold tracking-tight text-white uppercase italic">DHANNO 2.0</h4>
+                  <p className="font-body text-on-surface-variant leading-relaxed text-lg max-w-xl">The evolution. Upgraded to a fully BLE (Bluetooth Low Energy) controlled chassis featuring an advanced power delivery system and structural reinforcement.</p>
+                </div>
+              </div>
+              
+              <div className="md:flex-1 ml-12 md:ml-0 md:pr-8 relative group cursor-pointer w-full max-w-md md:order-1">
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl mix-blend-overlay z-10"></div>
+                <img src="/origin_dhanno2.png" alt="Dhanno 2.0 BLE Controlled Robot" className="bg-neutral-900 w-full aspect-[4/3] object-cover rounded-xl border border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] grayscale group-hover:grayscale-0" />
+              </div>
+            </div>
+
+            {/* Timeline Item 5 */}
+            <div className="relative group flex flex-col md:flex-row gap-12 items-start md:items-center">
+              <div className="absolute -left-[5px] md:-left-[5px] top-6 md:top-1/2 md:-translate-y-1/2 w-6 h-6 bg-primary rotate-45 animate-pulse z-10 shadow-[0_0_20px_rgba(0,255,65,0.8)]"></div>
+              
+              <div className="ml-12 md:ml-20 flex-1 bg-primary/5 p-8 rounded-2xl border border-primary/30 transition-colors shadow-2xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,#00ff41_0,#00ff41_1px,transparent_0,transparent_50%)] bg-[length:10px_10px] opacity-[0.03]"></div>
+                <div className="flex flex-col gap-2 mb-6 relative z-10">
+                  <span className="font-label text-[10px] text-primary tracking-widest uppercase font-bold">Operational_Climax</span>
+                  <h4 className="font-headline text-3xl font-bold tracking-tight text-white uppercase italic glow-text">THE ARENA OPENS</h4>
+                  <p className="font-body text-on-surface-variant leading-relaxed text-lg max-w-xl text-white/80">From a scattered prototype to a fully mobilized robotic chassis. The framework was set for the ultimate racing championship.</p>
+                </div>
+                <div className="flex gap-2">
+                   <span className="border border-primary/30 text-primary text-[9px] font-black px-3 py-1 uppercase tracking-widest bg-primary/10">CURRENT_STATUS: LIVE</span>
+                </div>
+              </div>
+              
+              <div className="md:flex-1 ml-12 md:ml-0 md:pl-8 opacity-0 hidden md:block">
+                {/* Spacer to keep balance for the fifth item */}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <section className="max-w-7xl mx-auto px-6 py-32">
         <div className="flex flex-col md:flex-row gap-8 items-end justify-between mb-20 border-b border-white/5 pb-12">
           <div className="max-w-3xl">
