@@ -46,19 +46,19 @@ export default function Arena() {
 
           <div className="relative perspective-card group mb-16">
             <div className="relative w-full aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden border border-white/10 shadow-3d-glow transition-all duration-500 group-hover:scale-[1.02] bg-neutral-900">
-              <img alt="3D Line Follower Robot Car" className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-110" src="/robot_car.png"/>
+              <img alt="3D Line Follower Robot Car" className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-110" src="/robot_car.png" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-              
+
               <div className="absolute inset-0 p-8 flex flex-col justify-between pointer-events-none">
                 <div className="flex justify-between items-start opacity-50">
                   <div className="w-16 h-16 border-t-4 border-l-4 border-primary"></div>
                   <div className="text-right font-mono text-[10px] text-primary">
-                    [ SCANNING_TARGET ]<br/>LOCK_ON_ACQUIRED
+                    [ SCANNING_TARGET ]<br />LOCK_ON_ACQUIRED
                   </div>
                 </div>
                 <div className="flex justify-between items-end opacity-50">
                   <div className="font-mono text-[10px] text-primary">
-                    COORD: 28.584° N, 77.250° E<br/>SECTOR: 04_DUCS
+                    COORD: 28.584° N, 77.250° E<br />SECTOR: 04_DUCS
                   </div>
                   <div className="w-16 h-16 border-b-4 border-r-4 border-primary"></div>
                 </div>
@@ -134,14 +134,14 @@ export default function Arena() {
             <div className="font-headline text-5xl md:text-6xl font-black tracking-tighter text-white mb-6 uppercase italic leading-none">DUCS, DELHI UNIVERSITY</div>
             <p className="font-body text-on-surface-variant max-w-md text-lg leading-relaxed">The historic Department of Computer Science transforms into a high-octane racing arena for one day only.</p>
           </div>
-          <div className="relative w-full md:w-2/5 aspect-video bg-[#111111] rounded-xl border border-white/10 overflow-hidden group shadow-inner">
-            <img alt="Delhi University Campus" className="w-full h-full object-cover grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-50 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbBolNQJnojqRrm1rbWTIEg703PLHvrANRukHD9hefeeO3z9R8EJzqMx6sXC9GsDptCcxqzzYl9JMNQkK-jUPm1Qh6S5w7NOKggPukKtZXJOKJNmPGZQ2vUg4X0nYmRLt-3R8IaR6rcyeuZZlgutP22mwMVg-zR-EyVymE0pljzcvQJfQ_HViKkfxxlVoUZ1S_G_cCnxZrrsHchDSYs4iJU1mRjHYfaKK_2WEuV8yonpF9g_uNJ7WmFAIURWSaGLHAaeD3bJbMFALa"/>
+          <a href="https://maps.app.goo.gl/A2ofjeLv3ZwY7ewP8" target="_blank" rel="noreferrer" className="relative w-full md:w-2/5 aspect-video bg-[#111111] rounded-xl border border-white/10 overflow-hidden group shadow-inner block cursor-pointer">
+            <img alt="Delhi University Campus" className="w-full h-full object-cover grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-50 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbBolNQJnojqRrm1rbWTIEg703PLHvrANRukHD9hefeeO3z9R8EJzqMx6sXC9GsDptCcxqzzYl9JMNQkK-jUPm1Qh6S5w7NOKggPukKtZXJOKJNmPGZQ2vUg4X0nYmRLt-3R8IaR6rcyeuZZlgutP22mwMVg-zR-EyVymE0pljzcvQJfQ_HViKkfxxlVoUZ1S_G_cCnxZrrsHchDSYs4iJU1mRjHYfaKK_2WEuV8yonpF9g_uNJ7WmFAIURWSaGLHAaeD3bJbMFALa" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-primary/20 backdrop-blur-md p-6 rounded-full border border-primary/40 shadow-[0_0_30px_rgba(0,255,65,0.3)]">
+              <div className="bg-primary/20 backdrop-blur-md p-6 rounded-full border border-primary/40 shadow-[0_0_30px_rgba(0,255,65,0.3)] transition-transform duration-500 group-hover:scale-110">
                 <span className="material-symbols-outlined text-primary text-5xl" data-icon="location_on">location_on</span>
               </div>
             </div>
-          </div>
+          </a>
           <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
         </div>
       </section>

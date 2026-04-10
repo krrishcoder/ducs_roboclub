@@ -56,9 +56,9 @@ export default function Logs() {
                       <span className="font-headline text-lg font-bold text-primary italic">SECTOR 07-DU</span>
                       <span className="font-label text-[9px] text-primary/60 uppercase tracking-tighter">28.6892° N, 77.2104° E</span>
                     </div>
-                    <button className="bg-primary text-black font-label text-[10px] font-black px-6 py-2 uppercase tracking-widest hover:bg-white transition-all transform hover:-translate-y-1 active:translate-y-0">
+                    <a href="https://maps.app.goo.gl/A2ofjeLv3ZwY7ewP8" target="_blank" rel="noreferrer" className="bg-primary text-black font-label text-[10px] font-black px-6 py-2 uppercase tracking-widest hover:bg-white transition-all transform hover:-translate-y-1 active:translate-y-0 text-center">
                       ACTIVATE_NAV
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -97,6 +97,25 @@ export default function Logs() {
             {/* Vertical Progress Line */}
             <div className="absolute left-0 top-0 bottom-0 w-[1px] timeline-line opacity-30"></div>
 
+            {/* April 19th History entry */}
+            <div className="relative group opacity-60 hover:opacity-100 transition-opacity">
+              <div className="absolute -left-[20px] top-6 w-3 h-3 bg-black border border-primary/50 group-hover:border-primary transition-all duration-300 z-10 rotate-45"></div>
+              <div className="kinetic-border bg-surface-container-low/10 p-6 backdrop-blur-sm group-hover:bg-primary/5 transition-colors border-primary/10">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <div className="flex flex-col gap-1">
+                    <span className="font-label text-[10px] text-primary/70 font-black tracking-[0.2em] flex items-center gap-2">
+                      <span className="w-1 h-1 bg-primary/70"></span> APRIL 10, 2026
+                    </span>
+                    <h4 className="font-headline text-xl font-bold tracking-tight uppercase text-primary/80 italic">SYSTEM_INIT</h4>
+                    <p className="font-body text-[13px] text-on-surface-variant font-medium leading-relaxed">Line Follower registration portal officially online.</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="border border-primary/30 text-primary/70 text-[9px] font-black px-3 py-1 uppercase tracking-widest bg-primary/5">HIST_LOG</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* 10:30 AM entry */}
             <div className="relative group">
               <div className="absolute -left-[20px] top-6 w-3 h-3 bg-black border border-primary group-hover:bg-primary transition-all duration-300 z-10 rotate-45"></div>
@@ -104,7 +123,7 @@ export default function Logs() {
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div className="flex flex-col gap-1">
                     <span className="font-label text-[10px] text-primary font-black tracking-[0.2em] flex items-center gap-2">
-                      <span className="w-1 h-1 bg-primary"></span> 10:30 AM
+                      <span className="w-1 h-1 bg-primary"></span> APR 24, 2026 // 10:00 AM
                     </span>
                     <h4 className="font-headline text-xl font-bold tracking-tight uppercase text-primary italic">KICKOFF_INIT</h4>
                     <p className="font-body text-[13px] text-on-surface-variant font-medium leading-relaxed">Opening briefing and hardware verification sequence.</p>
@@ -123,7 +142,7 @@ export default function Logs() {
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div className="flex flex-col gap-1">
                     <span className="font-label text-[10px] text-primary font-black tracking-[0.2em] flex items-center gap-2">
-                      <span className="w-1 h-1 bg-primary"></span> 11:00 AM
+                      <span className="w-1 h-1 bg-primary"></span> APR 24, 2026 // 11:00 AM
                     </span>
                     <h4 className="font-headline text-xl font-bold tracking-tight uppercase text-primary italic">TRIAL_RUNS</h4>
                     <p className="font-body text-[13px] text-on-surface-variant font-medium leading-relaxed">Qualifying runs on the technical obstacle course.</p>
@@ -144,7 +163,7 @@ export default function Logs() {
                   <div className="flex flex-col gap-1">
                     <div className="flex items-center gap-2">
                       <span className="font-label text-[10px] text-primary font-black tracking-[0.2em] flex items-center gap-2">
-                        <span className="w-1 h-1 bg-primary"></span> 02:00 PM
+                        <span className="w-1 h-1 bg-primary"></span> APR 24, 2026 // 12:00 PM
                       </span>
                       <span className="bg-primary text-black text-[8px] font-black px-2 py-0.5 uppercase tracking-widest">CRITICAL_EVENT</span>
                     </div>
@@ -169,7 +188,7 @@ export default function Logs() {
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div className="flex flex-col gap-1">
                     <span className="font-label text-[10px] text-primary font-black tracking-[0.2em] flex items-center gap-2">
-                      <span className="w-1 h-1 bg-primary"></span> 05:00 PM
+                      <span className="w-1 h-1 bg-primary"></span> APR 24, 2026 // 03:00 PM
                     </span>
                     <h4 className="font-headline text-xl font-bold tracking-tight uppercase text-primary italic">AWARDS_PROC</h4>
                     <p className="font-body text-[13px] text-on-surface-variant font-medium leading-relaxed">Podium celebration and telemetry report release.</p>
@@ -181,6 +200,54 @@ export default function Logs() {
               </div>
             </div>
             
+          </div>
+        </div>
+      </div>
+
+      {/* Over Torque 2025 Archive Section */}
+      <div className="mt-16 flex flex-col gap-8">
+        <div className="flex items-center gap-4 border-b border-primary/20 pb-4">
+          <span className="material-symbols-outlined text-primary text-3xl">inventory_2</span>
+          <h3 className="font-headline text-3xl font-black tracking-tighter italic text-primary uppercase">CLASSIFIED ARCHIVES: OVER TORQUE 2025</h3>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Historical Details */}
+          <div className="glass-card p-8 rounded-lg border-l-[3px] border-primary/30 opacity-80 hover:opacity-100 transition-opacity">
+            <h4 className="font-headline text-xl uppercase tracking-widest text-on-surface mb-4 glow-text text-primary">Event Origin</h4>
+            <ul className="space-y-4 font-body text-on-surface-variant text-sm leading-relaxed">
+              <li className="flex items-start gap-2">
+                <span className="material-symbols-outlined text-[16px] text-primary mt-1">arrow_right</span>
+                <span><strong>Date:</strong> April 20, 2025 (11:00 AM to 2:30 PM)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="material-symbols-outlined text-[16px] text-primary mt-1">arrow_right</span>
+                <span><strong>Venue:</strong> <a href="https://maps.app.goo.gl/A2ofjeLv3ZwY7ewP8" target="_blank" rel="noreferrer" className="hover:text-primary hover:underline transition-colors">Department of Computer Science, University of Delhi</a></span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="material-symbols-outlined text-[16px] text-primary mt-1">arrow_right</span>
+                <span><strong>Prize Pool:</strong> ₹16,000 Total (1st: 8K, 2nd: 5K, 3rd: 3K)</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Historical Task & Eligibility */}
+          <div className="glass-card p-8 rounded-lg border-l-[3px] border-primary/30 opacity-80 hover:opacity-100 transition-opacity">
+            <h4 className="font-headline text-xl uppercase tracking-widest text-on-surface mb-4 glow-text text-primary">Task &amp; Eligibility</h4>
+            <ul className="space-y-4 font-body text-on-surface-variant text-sm leading-relaxed">
+              <li className="flex items-start gap-2">
+                <span className="material-symbols-outlined text-[16px] text-primary mt-1">arrow_right</span>
+                <span>Max 4 members per team. Cross-institute participation allowed.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="material-symbols-outlined text-[16px] text-primary mt-1">arrow_right</span>
+                <span><strong>Objective:</strong> Manually controlled wireless robot navigating structural and tactical obstacle courses.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="material-symbols-outlined text-[16px] text-primary mt-1">arrow_right</span>
+                <span><strong>Hardware:</strong> Max 5KG, 30x30x20cm. Readymade kits penalized. No ground disengagement allowed.</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
