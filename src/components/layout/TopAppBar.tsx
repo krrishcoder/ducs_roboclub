@@ -3,44 +3,67 @@ import { useState, useRef, useEffect } from 'react';
 
 export default function TopAppBar() {
   const { pathname } = useLocation();
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
-    const startMusic = () => {
-      if (audioRef.current && audioRef.current.paused) {
-        audioRef.current.play().then(() => {
-          setIsPlaying(true);
-        }).catch(() => {});
-      }
-      // Remove listeners after first interaction
-      document.removeEventListener('click', startMusic);
-      document.removeEventListener('keydown', startMusic);
-      document.removeEventListener('scroll', startMusic);
-      document.removeEventListener('touchstart', startMusic);
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    // Immediately try to play (works after first ever visit or if browser allows)
+    const tryPlay = () => {
+      audio.play().then(() => {
+        setIsPlaying(true);
+        sessionStorage.setItem('musicActive', 'true');
+      }).catch(() => {
+        // Browser blocked - wait for first interaction
+        const startOnInteraction = () => {
+          audio.play().then(() => {
+            setIsPlaying(true);
+            sessionStorage.setItem('musicActive', 'true');
+          }).catch(() => {});
+          document.removeEventListener('click', startOnInteraction);
+          document.removeEventListener('keydown', startOnInteraction);
+          document.removeEventListener('touchstart', startOnInteraction);
+          document.removeEventListener('scroll', startOnInteraction);
+        };
+        document.addEventListener('click', startOnInteraction);
+        document.addEventListener('keydown', startOnInteraction);
+        document.addEventListener('touchstart', startOnInteraction);
+        document.addEventListener('scroll', startOnInteraction);
+      });
     };
 
-    document.addEventListener('click', startMusic);
-    document.addEventListener('keydown', startMusic);
-    document.addEventListener('scroll', startMusic);
-    document.addEventListener('touchstart', startMusic);
+    tryPlay();
+
+    // If music stops for any reason, restart it
+    const handleEnded = () => audio.play().catch(() => {});
+    const handlePause = () => {
+      // Only auto-resume if user didn't manually pause
+      if (sessionStorage.getItem('musicActive') === 'true') {
+        audio.play().catch(() => {});
+      }
+    };
+
+    audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('pause', handlePause);
 
     return () => {
-      document.removeEventListener('click', startMusic);
-      document.removeEventListener('keydown', startMusic);
-      document.removeEventListener('scroll', startMusic);
-      document.removeEventListener('touchstart', startMusic);
+      audio.removeEventListener('ended', handleEnded);
+      audio.removeEventListener('pause', handlePause);
     };
   }, []);
 
   const toggleMusic = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play().catch(e => console.error("Audio block:", e));
-      }
-      setIsPlaying(!isPlaying);
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      sessionStorage.setItem('musicActive', 'false');
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      sessionStorage.setItem('musicActive', 'true');
+      audioRef.current.play().catch(() => {});
+      setIsPlaying(true);
     }
   };
 
@@ -64,7 +87,7 @@ export default function TopAppBar() {
             className={`flex items-center justify-center w-8 h-8 rounded-full border border-primary/20 transition-all duration-300 ${isPlaying ? 'bg-primary/20 text-primary shadow-[0_0_10px_rgba(0,255,65,0.4)]' : 'bg-transparent text-primary/50 hover:text-primary'}`}
             title="Toggle BGM"
           >
-            <span className={`material-symbols-outlined text-[16px] ${isPlaying ? 'animate-pulse' : ''}`} data-icon={isPlaying ? 'music_note' : 'music_off'}>
+            <span className={`material-symbols-outlined text-[16px] ${isPlaying ? 'animate-pulse' : ''}`}>
               {isPlaying ? 'music_note' : 'music_off'}
             </span>
           </button>

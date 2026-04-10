@@ -198,12 +198,13 @@ export default function Arena() {
       <div className="w-full overflow-hidden pointer-events-none select-none">
         <span
           ref={fitTextRef}
-          className="font-headline font-black uppercase italic whitespace-nowrap leading-none tracking-tighter block text-center"
+          className="font-headline font-black uppercase italic whitespace-nowrap leading-none block text-center"
           style={{
             color: 'transparent',
             WebkitTextStroke: '1.5px rgba(0,255,65,0.18)',
             userSelect: 'none',
             lineHeight: '0.85',
+            letterSpacing: '-0.05em',
           }}
         >
           THE ALIVE ROBOTS
