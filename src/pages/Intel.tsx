@@ -36,8 +36,8 @@ export default function Intel() {
             </div>
             <div className="flex flex-col gap-2">
               <span className="font-label text-xs text-primary/70 uppercase tracking-widest">Time &amp; Date</span>
-              <span className="font-body text-on-surface text-lg">TBA - 2026</span>
-              <span className="font-body text-on-surface-variant">Stay tuned for schedule</span>
+              <span className="font-body text-on-surface text-lg">April 24, 2026</span>
+              <span className="font-body text-on-surface-variant">Line Follower Arena</span>
             </div>
           </div>
           
@@ -73,49 +73,113 @@ export default function Intel() {
             <div className="h-px bg-primary/10"></div>
             <div className="flex justify-between items-center">
               <span className="font-body text-sm text-on-surface-variant">MAX WEIGHT</span>
-              <span className="font-headline text-xl text-on-surface">TBD</span>
+              <span className="font-headline text-xl text-on-surface">1.5 KG</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Rules and Specs Sections */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        
-        {/* Core Task */}
-        <div className="glass-card p-8 rounded-lg border-l-[3px] border-primary/50 hover:border-primary transition-colors">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="material-symbols-outlined text-primary">crisis_alert</span>
-            <h3 className="font-headline text-xl uppercase tracking-widest text-on-surface">Core Task</h3>
+      {/* Detailed Rules */}
+      <div className="mb-16">
+        <h3 className="text-3xl font-headline font-bold uppercase tracking-tight text-on-surface mb-8 border-b border-primary/20 pb-4 flex items-center gap-3">
+          <span className="material-symbols-outlined text-primary">gavel</span> OFFICIAL RULEBOOK
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Robot Specifications */}
+          <div className="glass-card p-8 rounded-lg flex flex-col h-full hover:border-primary/30 transition-colors">
+            <h4 className="font-headline text-xl uppercase tracking-widest text-primary mb-6 flex items-center gap-2">
+               <span className="material-symbols-outlined">memory</span> Robot Specs
+            </h4>
+            <ul className="space-y-4 font-body text-sm">
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Max dimension</span><span className="text-white font-mono">25 x 25 cm</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Tolerance</span><span className="text-white font-mono">± 5%</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Max weight</span><span className="text-white font-mono">1.5 Kg</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Power supply</span><span className="text-white font-mono">Battery Only, Max 20 V</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Drive type</span><span className="text-white font-mono">Differential / skid</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Remote control</span><span className="text-red-400 font-mono">Not allowed</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Pre-built kits</span><span className="text-red-400 font-mono">Not allowed</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Track memorisation</span><span className="text-red-400 font-mono">Not allowed</span></li>
+              <li className="flex justify-between pt-1"><span className="text-on-surface-variant">Single robot rule</span><span className="text-white font-mono text-right max-w-[180px]">One robot per team (no swapping)</span></li>
+            </ul>
           </div>
-          <ul className="space-y-4 font-body text-on-surface-variant text-sm leading-relaxed">
-            <li className="flex items-start gap-2">
-              <span className="material-symbols-outlined text-[16px] text-primary mt-1">arrow_right</span>
-              <span><strong>Objective:</strong> Build an autonomous robot capable of tracing a high-contrast path (e.g., black line on a white background) from start to finish.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="material-symbols-outlined text-[16px] text-primary mt-1">arrow_right</span>
-              <span><strong>Navigation:</strong> The bot must successfully negotiate various challenging path elements, which may include curves, sharp angles, and crossovers.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="material-symbols-outlined text-[16px] text-primary mt-1">arrow_right</span>
-              <span><strong>Scoring:</strong> The final metric will be based on the time taken to complete the track, with penalties applied for losing the line or requiring manual intervention.</span>
-            </li>
-          </ul>
-        </div>
 
-        {/* Note on Rules */}
-        <div className="glass-card p-8 rounded-lg border-l-[3px] border-primary/50 hover:border-primary transition-colors">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="material-symbols-outlined text-primary">update</span>
-            <h3 className="font-headline text-xl uppercase tracking-widest text-on-surface">Full Rulebook Update Pending</h3>
+          {/* Track & Course Rules */}
+          <div className="glass-card p-8 rounded-lg flex flex-col h-full hover:border-primary/30 transition-colors">
+            <h4 className="font-headline text-xl uppercase tracking-widest text-primary mb-6 flex items-center gap-2">
+               <span className="material-symbols-outlined">route</span> Track & Course
+            </h4>
+            <ul className="space-y-4 font-body text-sm">
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Line color</span><span className="text-white font-mono">Black on white surface</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Line width</span><span className="text-white font-mono">2 - 3 cm</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Track features</span><span className="text-white font-mono text-right max-w-[180px]">Curves, 90° turns, 120° curves</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Intersections</span><span className="text-white font-mono">None</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Surface</span><span className="text-white font-mono">Flex sheet</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Timing</span><span className="text-white font-mono">Fastest</span></li>
+              <li className="flex justify-between pt-1"><span className="text-on-surface-variant">Test Track</span><span className="text-primary font-mono">Yes</span></li>
+            </ul>
           </div>
-          <p className="font-body text-on-surface-variant text-sm leading-relaxed mb-4">
-            The full comprehensive rulebook containing precise dimensions, weight restrictions, voltage limits, and detailed gameplay mechanics for the 2026 Line Follower event is currently being finalized by the organizing committee.
-          </p>
-          <div className="p-4 bg-primary/10 border border-primary/20 flex gap-4 items-center">
-            <span className="material-symbols-outlined text-primary animate-spin" style={{ animationDuration: '3s' }}>sync</span>
-            <span className="font-mono text-xs text-primary/80">AWAITING_TELEMETRY_FROM_HQ...</span>
+
+          {/* Competition Rules */}
+          <div className="glass-card p-8 rounded-lg flex flex-col h-full hover:border-primary/30 transition-colors">
+             <h4 className="font-headline text-xl uppercase tracking-widest text-primary mb-6 flex items-center gap-2">
+               <span className="material-symbols-outlined">sports_score</span> Competition Rules
+            </h4>
+            <ul className="space-y-4 font-body text-sm">
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Team size</span><span className="text-white font-mono">1-5 members</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Scoring</span><span className="text-white font-mono">Fastest completion time wins</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Timing</span><span className="text-white font-mono text-right max-w-[180px]">Starts at start line, stops at finish line</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Restart</span><span className="text-white font-mono text-right max-w-[180px]">1 restart per attempt (time continues)</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Tiebreaker</span><span className="text-white font-mono">Fewer restarts wins</span></li>
+              <li className="flex justify-between pt-1"><span className="text-on-surface-variant">Human assistance</span><span className="text-red-400 font-mono">Not allowed during run</span></li>
+            </ul>
+          </div>
+
+          {/* DNF & Constraints */}
+          <div className="glass-card p-8 rounded-lg flex flex-col h-full border-l-[3px] border-l-red-500/50 hover:border-l-red-500 transition-colors">
+             <h4 className="font-headline text-xl uppercase tracking-widest text-red-500 mb-6 flex items-center gap-2">
+               <span className="material-symbols-outlined">warning</span> DNF & Constraints
+            </h4>
+            <ul className="space-y-4 font-body text-sm">
+               <li className="flex flex-col border-b border-white/5 pb-3">
+                <span className="text-white font-bold mb-1">Max Time Limit</span>
+                <span className="text-on-surface-variant leading-relaxed">Each attempt has a max duration of 5 mins. Not finishing within 5 min = DNF. 3 attempts per team, best time counts.</span>
+              </li>
+              <li className="flex flex-col border-b border-white/5 pb-3">
+                <span className="text-white font-bold mb-1">Off-Tracking & Void</span>
+                <span className="text-on-surface-variant leading-relaxed">Off-track when no part is over the black line for &gt;3s. Run void after 3 off-track events (back to last checkpoint). 6 off-track events = DNF. DNF ranks below all timed finishes.</span>
+              </li>
+              <li className="flex flex-col pt-1">
+                <span className="text-white font-bold mb-1">Measurements & Weight Check</span>
+                <span className="text-on-surface-variant leading-relaxed">Dimensions measured at widest point (incl. sensors). Must fit inside 26.5 x 26.5 cm box jig. Weighed with battery before every run.</span>
+              </li>
+            </ul>
+          </div>
+
+           {/* Prizes */}
+          <div className="md:col-span-2 glass-card p-8 rounded-lg bg-primary/5 hover:bg-primary/10 border border-primary/20 transition-all flex flex-col sm:flex-row items-center justify-between gap-6">
+             <div className="flex items-center gap-4">
+                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center border border-primary/50">
+                   <span className="material-symbols-outlined text-4xl text-primary">emoji_events</span>
+                </div>
+                <div>
+                  <h4 className="font-headline text-2xl uppercase tracking-widest text-primary">Prizes & Perks</h4>
+                  <p className="font-label text-xs tracking-[0.2em] text-on-surface-variant uppercase">Claim your victory</p>
+                </div>
+             </div>
+             <div className="flex gap-4 w-full sm:w-auto">
+                <div className="flex-1 sm:flex-none py-3 px-6 bg-black/40 rounded border border-white/5 text-center">
+                  <div className="text-primary font-bold mb-1 uppercase tracking-widest text-sm">1ST PRIZE</div>
+                  <div className="font-mono text-sm text-white/50">TBA</div>
+                </div>
+                <div className="flex-1 sm:flex-none py-3 px-6 bg-black/40 rounded border border-white/5 text-center">
+                  <div className="text-white font-bold mb-1 uppercase tracking-widest text-sm">2ND PRIZE</div>
+                  <div className="font-mono text-sm text-white/50">TBA</div>
+                </div>
+                 <div className="flex-1 sm:flex-none py-3 px-6 bg-black/40 rounded border border-white/5 text-center">
+                  <div className="text-white font-bold mb-1 uppercase tracking-widest text-sm">PERKS</div>
+                  <div className="font-mono text-sm text-white/80">E-Certificate</div>
+                </div>
+             </div>
           </div>
         </div>
       </div>

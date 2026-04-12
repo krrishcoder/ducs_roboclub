@@ -277,7 +277,8 @@ export default function Arena() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-32">
+
+      <section className="max-w-7xl mx-auto px-6 py-32 border-t border-white/5">
         <div className="flex flex-col md:flex-row gap-8 items-end justify-between mb-20 border-b border-white/5 pb-12">
           <div className="max-w-3xl">
             <h2 className="font-headline text-6xl font-black tracking-tighter text-white uppercase italic mb-6">KINETIC SPECS</h2>
@@ -324,6 +325,7 @@ export default function Arena() {
           </div>
         </div>
       </section>
+
 
       {/* Bottom page text — FitText */}
       <div className="w-full overflow-hidden pointer-events-none select-none">
