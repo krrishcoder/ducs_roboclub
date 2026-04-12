@@ -14,7 +14,7 @@ export default function Footer() {
             </svg>
             @ducs_roboclub
           </a>
-          <Link to="/" className="font-label text-[8px] tracking-[0.2em] uppercase text-on-surface/30 hover:text-primary transition-colors">RULES</Link>
+          <Link to="/intel" className="font-label text-[8px] tracking-[0.2em] uppercase text-on-surface/30 hover:text-primary transition-colors">RULES</Link>
           <Link to="/" className="font-label text-[8px] tracking-[0.2em] uppercase text-on-surface/30 hover:text-primary transition-colors">PIT_ACCESS</Link>
           <Link to="/" className="font-label text-[8px] tracking-[0.2em] uppercase text-on-surface/30 hover:text-primary transition-colors">TELEMETRY</Link>
           <Link to="/join" className="font-label text-[8px] tracking-[0.2em] uppercase text-on-surface/30 hover:text-primary transition-colors">CONTACT</Link>

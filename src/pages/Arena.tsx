@@ -20,7 +20,9 @@ export default function Arena() {
       const naturalWidth = temp.getBoundingClientRect().width;
       document.body.removeChild(temp);
 
-      const fontSize = (window.innerWidth / naturalWidth) * 100;
+      // Use 96 instead of 100 to leave a small buffer on the edges, 
+      // preventing the italicized 'S' from leaning out of the viewport.
+      const fontSize = (window.innerWidth / naturalWidth) * 96;
       if (fitTextRef.current) {
         fitTextRef.current.style.fontSize = `${fontSize}px`;
       }
@@ -30,7 +32,7 @@ export default function Arena() {
     return () => window.removeEventListener('resize', fit);
   }, []);
   return (
-    <main className="pt-32 pb-32 overflow-hidden bg-[url('https://transparent-pattern.svg')]">
+    <main className="pt-32 pb-0 overflow-hidden flex flex-col">
       <section className="relative min-h-[85vh] flex flex-col items-center justify-center px-6 text-center overflow-hidden">
 
         <div className="relative z-10 max-w-6xl w-full">
@@ -102,11 +104,11 @@ export default function Arena() {
           <div>
             <h3 className="font-label text-[10px] text-primary uppercase tracking-[0.4em] mb-8 font-black flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-              UPCOMING EVENT
+              SANKALAN 2026
             </h3>
             <div className="font-headline text-4xl font-black tracking-tighter text-white italic mb-1">LINE FOLLOWER</div>
             <div className="font-headline text-4xl font-black tracking-tighter text-primary italic mb-4">ROBOT</div>
-            <div className="font-label text-[10px] text-white/40 uppercase tracking-widest">APRIL 24, 2026</div>
+            <div className="font-label text-[10px] text-white/40 uppercase tracking-widest">APRIL 24-25, 2026</div>
           </div>
           <div className="mt-8 flex items-center justify-between text-on-surface-variant font-mono text-xs">
             <span className="material-symbols-outlined text-primary" data-icon="calendar_month">calendar_month</span>
@@ -329,21 +331,23 @@ export default function Arena() {
       </section>
 
 
-      {/* Bottom page text — FitText */}
-      <div className="w-full overflow-hidden pointer-events-none select-none">
-        <span
-          ref={fitTextRef}
-          className="font-headline font-black uppercase italic whitespace-nowrap leading-none block text-center"
-          style={{
-            color: 'transparent',
-            WebkitTextStroke: '1.5px rgba(0,255,65,0.18)',
-            userSelect: 'none',
-            lineHeight: '0.85',
-            letterSpacing: '-0.05em',
-          }}
-        >
-          THE ALIVE ROBOTS
-        </span>
+      {/* Bottom page text — FitText, flush to footer */}
+      <div className="flex-1 flex items-end">
+        <div className="w-full overflow-hidden pointer-events-none select-none">
+          <span
+            ref={fitTextRef}
+            className="font-headline font-black uppercase italic whitespace-nowrap leading-none block text-center"
+            style={{
+              color: 'transparent',
+              WebkitTextStroke: '1.5px rgba(0,255,65,0.18)',
+              userSelect: 'none',
+              lineHeight: '0.85',
+              letterSpacing: '-0.05em',
+            }}
+          >
+            THE ALIVE ROBOTS
+          </span>
+        </div>
       </div>
     </main>
   );

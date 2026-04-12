@@ -36,7 +36,7 @@ export default function Intel() {
             </div>
             <div className="flex flex-col gap-2">
               <span className="font-label text-xs text-primary/70 uppercase tracking-widest">Time &amp; Date</span>
-              <span className="font-body text-on-surface text-lg">April 24, 2026</span>
+              <span className="font-body text-on-surface text-lg">April 24-25, 2026</span>
               <span className="font-body text-on-surface-variant">Line Follower Arena</span>
             </div>
           </div>
