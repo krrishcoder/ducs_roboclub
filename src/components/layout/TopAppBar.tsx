@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 
 export default function TopAppBar() {
   const { pathname } = useLocation();
-  const [isPlaying, setIsPlaying] = useState(() => localStorage.getItem('bgmEnabled') !== 'false');
+  const [isPlaying, setIsPlaying] = useState(true);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -12,33 +12,26 @@ export default function TopAppBar() {
     const events = ['click', 'keydown', 'touchstart', 'scroll', 'mousemove', 'wheel', 'pointerdown'];
 
     audio.loop = true;
-
-    const isEnabled = localStorage.getItem('bgmEnabled') !== 'false';
-    if (!isEnabled) {
-      audio.pause();
-      setIsPlaying(false);
-      return;
-    }
+    audio.volume = 0.5;
 
     const tryPlay = async () => {
       try {
-        audio.muted = false;
+        // Browsers allow muted autoplay — play muted first, then unmute immediately
+        audio.muted = true;
         await audio.play();
+        audio.muted = false;
         setIsPlaying(true);
       } catch (err) {
-        // Autoplay blocked by browser. Wait for interaction to play.
+        // Even muted play failed — wait for first user interaction
         setIsPlaying(false);
         const startOnInteraction = async () => {
-          // Remove listeners immediately so we don't trigger multiple times
           events.forEach(e => document.removeEventListener(e, startOnInteraction));
-          if (localStorage.getItem('bgmEnabled') !== 'false') {
-            try {
-              audio.muted = false;
-              await audio.play();
-              setIsPlaying(true);
-            } catch (e) {
-              console.error("Audio playback still blocked:", e);
-            }
+          try {
+            audio.muted = false;
+            await audio.play();
+            setIsPlaying(true);
+          } catch (e) {
+            console.error("Audio playback still blocked:", e);
           }
         };
         events.forEach(e => document.addEventListener(e, startOnInteraction, { once: true }));
@@ -49,40 +42,48 @@ export default function TopAppBar() {
 
     const handleEnded = () => audio.play().catch(() => {});
     const handleVisibilityChange = () => {
-      if (!document.hidden && localStorage.getItem('bgmEnabled') !== 'false') {
+      if (!document.hidden) {
         audio.play().then(() => setIsPlaying(true)).catch(() => {});
       }
     };
 
     const handleResumeTriggers = () => {
-      if (localStorage.getItem('bgmEnabled') !== 'false' && audio.paused) {
+      if (audio.paused) {
         audio.play().then(() => setIsPlaying(true)).catch(() => {});
       }
     };
 
+    const handlePageReady = () => {
+      audio.load();
+      tryPlay();
+    };
+
     audio.addEventListener('ended', handleEnded);
     audio.addEventListener('canplay', handleResumeTriggers);
+    audio.addEventListener('loadeddata', handleResumeTriggers);
     document.addEventListener('visibilitychange', handleVisibilityChange);
     window.addEventListener('focus', handleResumeTriggers);
     window.addEventListener('pageshow', handleResumeTriggers);
+    window.addEventListener('load', handlePageReady);
 
     return () => {
       audio.removeEventListener('ended', handleEnded);
       audio.removeEventListener('canplay', handleResumeTriggers);
+      audio.removeEventListener('loadeddata', handleResumeTriggers);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('focus', handleResumeTriggers);
       window.removeEventListener('pageshow', handleResumeTriggers);
+      window.removeEventListener('load', handlePageReady);
     };
   }, []);
 
   const toggleMusic = () => {
     if (!audioRef.current) return;
     if (isPlaying) {
-      localStorage.setItem('bgmEnabled', 'false');
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
-      localStorage.setItem('bgmEnabled', 'true');
+      audioRef.current.muted = false;
       audioRef.current.play().catch(() => {});
       setIsPlaying(true);
     }

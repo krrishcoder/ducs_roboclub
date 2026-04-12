@@ -1,7 +1,8 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 export default function Arena() {
   const fitTextRef = useRef<HTMLSpanElement>(null);
+  const [isNeuroSitGalleryOpen, setIsNeuroSitGalleryOpen] = useState(false);
 
   useEffect(() => {
     const fit = () => {
@@ -31,7 +32,21 @@ export default function Arena() {
     window.addEventListener('resize', fit);
     return () => window.removeEventListener('resize', fit);
   }, []);
+
+  useEffect(() => {
+    if (!isNeuroSitGalleryOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsNeuroSitGalleryOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isNeuroSitGalleryOpen]);
   return (
+    <>
     <main className="pt-32 pb-0 overflow-hidden flex flex-col">
       <section className="relative min-h-[85vh] flex flex-col items-center justify-center px-6 text-center overflow-hidden">
 
@@ -84,8 +99,43 @@ export default function Arena() {
       </section>
 
       <section className="max-w-7xl mx-auto px-6 py-32 grid grid-cols-1 md:grid-cols-12 gap-8">
+        {/* Current Event Card */}
+        <div className="md:col-span-6 bg-[#111111] p-10 rounded-2xl border border-white/5 flex flex-col justify-between shadow-2xl">
+          <div>
+            <h3 className="font-label text-[10px] text-primary uppercase tracking-[0.4em] mb-8 font-black flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              SANKALAN 2026
+            </h3>
+            <div className="font-headline text-4xl font-black tracking-tighter text-white italic mb-1">LINE FOLLOWING</div>
+            <div className="font-headline text-4xl font-black tracking-tighter text-primary italic mb-4">ROBOT</div>
+            <div className="font-label text-[10px] text-white/40 uppercase tracking-widest">APRIL 24-25, 2026</div>
+          </div>
+          <div className="mt-8 flex items-center justify-between text-on-surface-variant font-mono text-xs">
+            <span className="material-symbols-outlined text-primary" data-icon="calendar_month">calendar_month</span>
+            <span className="tracking-widest font-bold text-primary">REGISTER NOW</span>
+          </div>
+        </div>
+
+        <div className="md:col-span-6 bg-[#111111] p-10 rounded-2xl border border-white/5 flex flex-col justify-between shadow-2xl">
+          <div>
+            <h3 className="font-label text-[10px] text-primary uppercase tracking-[0.4em] mb-8 font-black flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              SANKALAN 2026
+            </h3>
+            <div className="font-headline text-4xl font-black tracking-tighter text-white italic mb-1">SIGNAL</div>
+            <div className="font-headline text-4xl font-black tracking-tighter text-primary italic mb-4">PROTOCOL</div>
+            <p className="font-body text-on-surface-variant text-lg leading-relaxed max-w-lg">
+              A high-octane, CTF-inspired challenge where participants solve hardware and software puzzles, decode clues, and race toward the final System Root.
+            </p>
+          </div>
+          <div className="mt-8 flex items-center justify-between text-on-surface-variant font-mono text-xs">
+            <span className="material-symbols-outlined text-primary" data-icon="confirmation_number">confirmation_number</span>
+            <span className="tracking-widest font-bold text-primary">REGISTER NOW</span>
+          </div>
+        </div>
+
         {/* Prize Pool Card */}
-        <div className="md:col-span-8 bg-[#111111] p-10 rounded-2xl relative overflow-hidden group border border-white/5 shadow-2xl transition-all hover:border-primary/30">
+        <div className="md:col-span-12 bg-[#111111] p-10 rounded-2xl relative overflow-hidden group border border-white/5 shadow-2xl transition-all hover:border-primary/30">
           <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
             <span className="material-symbols-outlined text-[12rem] text-primary" data-icon="payments">payments</span>
           </div>
@@ -97,23 +147,6 @@ export default function Arena() {
             SOON<span className="text-primary">™</span>
           </div>
           <p className="font-body text-on-surface-variant mt-6 text-xl max-w-lg">Prize pool announcement coming soon. Stay tuned for the ultimate stakes.</p>
-        </div>
-
-        {/* Current Event Card */}
-        <div className="md:col-span-4 bg-[#111111] p-10 rounded-2xl border border-white/5 flex flex-col justify-between shadow-2xl">
-          <div>
-            <h3 className="font-label text-[10px] text-primary uppercase tracking-[0.4em] mb-8 font-black flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-              SANKALAN 2026
-            </h3>
-            <div className="font-headline text-4xl font-black tracking-tighter text-white italic mb-1">LINE FOLLOWER</div>
-            <div className="font-headline text-4xl font-black tracking-tighter text-primary italic mb-4">ROBOT</div>
-            <div className="font-label text-[10px] text-white/40 uppercase tracking-widest">APRIL 24-25, 2026</div>
-          </div>
-          <div className="mt-8 flex items-center justify-between text-on-surface-variant font-mono text-xs">
-            <span className="material-symbols-outlined text-primary" data-icon="calendar_month">calendar_month</span>
-            <span className="tracking-widest font-bold text-primary">REGISTER NOW</span>
-          </div>
         </div>
 
         {/* Past Event Banner */}
@@ -273,10 +306,18 @@ export default function Arena() {
                   <span className="border border-white/10 text-white/40 text-[9px] font-black px-3 py-1 uppercase tracking-widest">AI · SENSORS</span>
                 </div>
               </div>
-              <div className="md:flex-1 ml-12 md:ml-0 md:pr-8 relative group cursor-pointer w-full max-w-md md:order-1">
+              <button
+                type="button"
+                onClick={() => setIsNeuroSitGalleryOpen(true)}
+                className="md:flex-1 ml-12 md:ml-0 md:pr-8 relative group cursor-pointer w-full max-w-md md:order-1 text-left"
+                aria-label="Open NeuroSit gallery"
+              >
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl mix-blend-overlay z-10"></div>
-                <img src="/batch25_neurosit_team.jpg" alt="NeuroSit team at national competition" className="bg-neutral-900 w-full aspect-[4/3] object-cover object-top rounded-xl border border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] grayscale group-hover:grayscale-0" />
-              </div>
+                <img src="/batch25_trophy.jpg" alt="NeuroSit prize moment" className="bg-neutral-900 w-full aspect-[4/3] object-cover object-center rounded-xl border border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] grayscale group-hover:grayscale-0" />
+                <span className="absolute bottom-4 left-4 z-20 border border-primary/30 bg-black/70 px-3 py-1 font-label text-[9px] font-black uppercase tracking-[0.3em] text-primary">
+                  View Gallery
+                </span>
+              </button>
             </div>
 
             {/* Timeline Item 6 — Eve */}
@@ -301,30 +342,6 @@ export default function Arena() {
                 <img src="/batch25_eve_plant.jpg" alt="Eve robo plant" className="bg-neutral-900 w-full aspect-[4/3] object-cover rounded-xl border border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] grayscale group-hover:grayscale-0" />
               </div>
             </div>
-
-            {/* Timeline Item 7 — Signal Protocol */}
-            <div className="relative group flex flex-col md:flex-row gap-12 items-start md:items-center">
-              <div className="absolute -left-[5px] md:-left-[5px] top-6 md:top-1/2 md:-translate-y-1/2 w-6 h-6 bg-black border-2 border-primary rotate-45 group-hover:bg-primary transition-all duration-300 z-10 shadow-[0_0_20px_rgba(0,255,65,0.4)]"></div>
-              <div className="ml-12 md:ml-20 flex-1 bg-[#111111] p-8 rounded-2xl border border-white/5 hover:border-primary/40 transition-colors shadow-2xl relative overflow-hidden md:order-2">
-                <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
-                  <span className="font-headline text-9xl italic font-black">07</span>
-                </div>
-                <div className="flex flex-col gap-2 relative z-10">
-                  <span className="font-label text-[10px] text-primary tracking-widest uppercase font-bold">MSc_Batch_2025-27 // NOV 2025 // CTF CHALLENGE</span>
-                  <h4 className="font-headline text-3xl font-bold tracking-tight text-white uppercase italic">SIGNAL PROTOCOL</h4>
-                  <p className="font-body text-on-surface-variant leading-relaxed max-w-xl">A high-octane CTF-inspired challenge where participants navigate complex hardware and software puzzles to reach a final "System Root". Not a scavenger hunt — a battle of multidisciplinary skill, awareness, and creativity. <span className="text-primary font-bold">Won the prize. 🏆</span></p>
-                </div>
-                <div className="flex gap-2 mt-4">
-                  <span className="border border-primary/30 text-primary text-[9px] font-black px-3 py-1 uppercase tracking-widest bg-primary/10">NOV 25, 2025</span>
-                  <span className="border border-primary/40 text-primary text-[9px] font-black px-3 py-1 uppercase tracking-widest bg-primary/5">🏆 PRIZE WIN</span>
-                </div>
-              </div>
-              <div className="md:flex-1 ml-12 md:ml-0 md:pr-8 relative group cursor-pointer w-full max-w-md md:order-1">
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl mix-blend-overlay z-10"></div>
-                <img src="/batch25_trophy.jpg" alt="Signal Protocol prize win" className="bg-neutral-900 w-full aspect-[4/3] object-cover object-center rounded-xl border border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] grayscale group-hover:grayscale-0" />
-              </div>
-            </div>
-
 
             {/* Timeline Item 6 — Current/Live */}
             <div className="relative group flex flex-col md:flex-row gap-12 items-start md:items-center">
@@ -420,5 +437,46 @@ export default function Arena() {
         </div>
       </div>
     </main>
+
+    {isNeuroSitGalleryOpen && (
+      <div
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 px-6 py-10 backdrop-blur-sm"
+        onClick={() => setIsNeuroSitGalleryOpen(false)}
+        role="dialog"
+        aria-modal="true"
+        aria-label="NeuroSit gallery"
+      >
+        <div
+          className="relative w-full max-w-6xl rounded-3xl border border-white/10 bg-[#0d0d0d] p-6 shadow-2xl"
+          onClick={(event) => event.stopPropagation()}
+        >
+          <button
+            type="button"
+            onClick={() => setIsNeuroSitGalleryOpen(false)}
+            className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:border-primary/40 hover:text-primary"
+            aria-label="Close NeuroSit gallery"
+          >
+            ×
+          </button>
+
+          <div className="mb-6 pr-12">
+            <p className="font-label text-[10px] font-black uppercase tracking-[0.35em] text-primary">NeuroSit Gallery</p>
+            <h3 className="font-headline text-3xl font-black uppercase italic text-white">Team + Prize Moments</h3>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <figure className="space-y-3">
+              <img src="/batch25_neurosit_team.jpg" alt="NeuroSit team at national competition" className="w-full rounded-2xl border border-white/10 bg-neutral-900 object-cover shadow-2xl" />
+              <figcaption className="font-body text-sm text-white/60">NeuroSit team presentation at the national-level competition.</figcaption>
+            </figure>
+            <figure className="space-y-3">
+              <img src="/batch25_trophy.jpg" alt="NeuroSit prize moment" className="w-full rounded-2xl border border-white/10 bg-neutral-900 object-cover shadow-2xl" />
+              <figcaption className="font-body text-sm text-white/60">Prize-winning moment associated with the NeuroSit project.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   );
 }
