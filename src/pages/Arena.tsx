@@ -44,23 +44,25 @@ export default function Arena() {
             Speed, Thrills and DUCS spirit!
           </p>
 
-          <div className="relative perspective-card group mb-16">
-            <div className="relative w-full aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden border border-white/10 shadow-3d-glow transition-all duration-500 group-hover:scale-[1.02] bg-neutral-900">
-              <img alt="3D Line Follower Robot Car" className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-110" src="/robot_car.png" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-
-              <div className="absolute inset-0 p-8 flex flex-col justify-between pointer-events-none">
-                <div className="flex justify-between items-start opacity-50">
-                  <div className="w-16 h-16 border-t-4 border-l-4 border-primary"></div>
-                  <div className="text-right font-mono text-[10px] text-primary">
-                    [ SCANNING_TARGET ]<br />LOCK_ON_ACQUIRED
+          <div className="relative group mb-16 w-full max-w-5xl mx-auto">
+            {/* Ambient glow behind the robot */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-1/2 bg-primary/20 blur-[120px] rounded-full pointer-events-none z-0"></div>
+            
+            <div className="relative z-10 w-full transition-all duration-700 group-hover:scale-[1.03] group-hover:-translate-y-4">
+              <img alt="Line Follower Robot Side Profile" className="w-full h-auto object-contain mix-blend-screen opacity-90 transition-opacity duration-500 group-hover:opacity-100 drop-shadow-2xl relative z-10" src="/hero_bot.jpg" />
+              
+              <div className="absolute inset-0 p-4 md:p-8 flex flex-col justify-between pointer-events-none z-20">
+                <div className="flex justify-between items-start opacity-70">
+                  <div className="w-12 h-12 md:w-16 md:h-16 border-t-2 border-l-2 md:border-t-4 md:border-l-4 border-primary opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="text-right font-mono text-[8px] md:text-[10px] text-primary">
+                    [ CHASSIS_SCAN ]<br />AERODYNAMIC_PROFILE: OPTIMAL
                   </div>
                 </div>
-                <div className="flex justify-between items-end opacity-50">
-                  <div className="font-mono text-[10px] text-primary">
-                    COORD: 28.584° N, 77.250° E<br />SECTOR: 04_DUCS
+                <div className="flex justify-between items-end opacity-70">
+                  <div className="font-mono text-[8px] md:text-[10px] text-primary">
+                    DRIVETRAIN: DIFFERENTIAL<br />MASS_LIMIT: 1.5 KG
                   </div>
-                  <div className="w-16 h-16 border-b-4 border-r-4 border-primary"></div>
+                  <div className="w-12 h-12 md:w-16 md:h-16 border-b-2 border-r-2 md:border-b-4 md:border-r-4 border-primary opacity-50 group-hover:opacity-100 transition-opacity"></div>
                 </div>
               </div>
             </div>
