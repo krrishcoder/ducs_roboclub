@@ -204,6 +204,78 @@ export default function Logs() {
         </div>
       </div>
 
+
+
+      {/* CURRENT LIVE: Line Follower Robot — Sankalan 2026 */}
+      <div className="mt-8 flex flex-col gap-6">
+        <div className="flex items-center gap-4 border-b border-primary/20 pb-4">
+          <div className="relative">
+            <span className="material-symbols-outlined text-primary text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>smart_toy</span>
+            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-primary rounded-full animate-ping"></span>
+          </div>
+          <div className="flex flex-col">
+            <span className="font-label text-[9px] tracking-[0.3em] text-primary uppercase font-bold">CURRENT EVENT // REGISTRATION OPEN</span>
+            <h3 className="font-headline text-3xl font-black tracking-tighter italic text-primary uppercase">LINE FOLLOWER ROBOT</h3>
+          </div>
+          <span className="ml-auto bg-primary text-black font-label text-[9px] font-black px-3 py-1.5 uppercase tracking-widest animate-pulse">● LIVE</span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Event Identity */}
+          <div className="glass-card p-6 rounded-xl border-l-[3px] border-primary col-span-1 flex flex-col gap-4">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-primary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>calendar_month</span>
+              <span className="font-label text-[9px] text-primary uppercase tracking-widest font-bold">EVENT DETAILS</span>
+            </div>
+            <div className="flex flex-col gap-3">
+              <div>
+                <p className="font-label text-[9px] text-primary/50 uppercase tracking-widest">FEST</p>
+                <p className="font-headline text-xl font-black text-white uppercase italic">SANKALAN 2026</p>
+              </div>
+              <div>
+                <p className="font-label text-[9px] text-primary/50 uppercase tracking-widest">DATE</p>
+                <p className="font-body text-white font-semibold">April 24–25, 2026</p>
+              </div>
+              <div>
+                <p className="font-label text-[9px] text-primary/50 uppercase tracking-widest">VENUE</p>
+                <p className="font-body text-white/70 text-sm">Dept. of Computer Science, University of Delhi</p>
+              </div>
+            </div>
+          </div>
+
+          {/* What is LFR + Key Rules */}
+          <div className="glass-card p-6 rounded-xl col-span-1 md:col-span-2 flex flex-col gap-5">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-primary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>route</span>
+              <span className="font-label text-[9px] text-primary uppercase tracking-widest font-bold">MISSION BRIEF</span>
+            </div>
+            <p className="font-body text-on-surface-variant leading-relaxed">
+              Build a fully autonomous robot that follows a <strong className="text-white">black line (2–3 cm wide) on a white flex-sheet surface</strong> — navigating curves, 90° turns, and 120° curves with no intersections. No remote control. No pre-built kits. Fastest completion time wins.
+            </p>
+            <div className="grid grid-cols-2 gap-3 border-t border-white/5 pt-4">
+              {[
+                { label: 'Max Dimension', value: '25 × 25 cm (±5%)' },
+                { label: 'Max Weight', value: '1.5 Kg (with battery)' },
+                { label: 'Power', value: 'Battery only, Max 20V' },
+                { label: 'Team Size', value: '1–5 members' },
+                { label: 'Attempts', value: '3 runs, best time counts' },
+                { label: 'Max Time', value: '5 min per attempt' },
+              ].map(({ label, value }) => (
+                <div key={label} className="flex flex-col gap-0.5">
+                  <span className="font-label text-[8px] text-primary/50 uppercase tracking-widest">{label}</span>
+                  <span className="font-body text-white text-sm font-semibold">{value}</span>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {['Autonomous', 'No Intersections', 'PID Control', 'Differential Drive'].map(tag => (
+                <span key={tag} className="font-mono text-[8px] border border-primary/30 text-primary/70 px-2 py-0.5 uppercase bg-primary/5">{tag}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Over Torque 2025 Archive Section */}
       <div className="mt-16 flex flex-col gap-8">
         <div className="flex items-center gap-4 border-b border-primary/20 pb-4">

@@ -256,7 +256,77 @@ export default function Arena() {
               </div>
             </div>
 
-            {/* Timeline Item 5 */}
+            {/* Timeline Item 5 — NeuroSit */}
+            <div className="relative group flex flex-col md:flex-row gap-12 items-start md:items-center">
+              <div className="absolute -left-[5px] md:-left-[5px] top-6 md:top-1/2 md:-translate-y-1/2 w-6 h-6 bg-black border-2 border-primary rotate-45 group-hover:bg-primary transition-all duration-300 z-10 shadow-[0_0_20px_rgba(0,255,65,0.4)]"></div>
+              <div className="ml-12 md:ml-20 flex-1 bg-[#111111] p-8 rounded-2xl border border-white/5 hover:border-primary/40 transition-colors shadow-2xl relative overflow-hidden md:order-2">
+                <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                  <span className="font-headline text-9xl italic font-black">05</span>
+                </div>
+                <div className="flex flex-col gap-2 relative z-10">
+                  <span className="font-label text-[10px] text-primary tracking-widest uppercase font-bold">MSc_Batch_2025-27 // NOV 2025 // HARDWARE + AI</span>
+                  <h4 className="font-headline text-3xl font-bold tracking-tight text-white uppercase italic">NEUROSIT</h4>
+                  <p className="font-body text-on-surface-variant leading-relaxed max-w-xl">An AI-enabled smart chair to monitor posture and emotional states in real time using multi-sensor data fusion. Presented at a national-level competition.</p>
+                </div>
+                <div className="flex gap-2 mt-4">
+                  <span className="border border-primary/30 text-primary text-[9px] font-black px-3 py-1 uppercase tracking-widest bg-primary/10">NOV 2025</span>
+                  <span className="border border-white/10 text-white/40 text-[9px] font-black px-3 py-1 uppercase tracking-widest">AI · SENSORS</span>
+                </div>
+              </div>
+              <div className="md:flex-1 ml-12 md:ml-0 md:pr-8 relative group cursor-pointer w-full max-w-md md:order-1">
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl mix-blend-overlay z-10"></div>
+                <img src="/batch25_neurosit_team.jpg" alt="NeuroSit team at national competition" className="bg-neutral-900 w-full aspect-[4/3] object-cover object-top rounded-xl border border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] grayscale group-hover:grayscale-0" />
+              </div>
+            </div>
+
+            {/* Timeline Item 6 — Eve */}
+            <div className="relative group flex flex-col md:flex-row gap-12 items-start md:items-center">
+              <div className="absolute -left-[5px] md:-left-[5px] top-6 md:top-1/2 md:-translate-y-1/2 w-6 h-6 bg-black border-2 border-primary rotate-45 group-hover:bg-primary transition-all duration-300 z-10 shadow-[0_0_20px_rgba(0,255,65,0.4)]"></div>
+              <div className="ml-12 md:ml-20 flex-1 bg-[#111111] p-8 rounded-2xl border border-white/5 hover:border-primary/40 transition-colors shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                  <span className="font-headline text-9xl italic font-black">06</span>
+                </div>
+                <div className="flex flex-col gap-2 relative z-10">
+                  <span className="font-label text-[10px] text-primary tracking-widest uppercase font-bold">MSc_Batch_2025-27 // PERSONAL PROJECT // IoT + CV</span>
+                  <h4 className="font-headline text-3xl font-bold tracking-tight text-white uppercase italic">EVE</h4>
+                  <p className="font-body text-on-surface-variant leading-relaxed max-w-xl">A real-time interactive robo plant powered by IoT, ESP32, sensors, and computer vision. EVE responds to its environment with human-like emotional expressions through animated OLED eyes.</p>
+                </div>
+                <div className="flex gap-2 mt-4">
+                  <span className="border border-white/10 text-white/40 text-[9px] font-black px-3 py-1 uppercase tracking-widest">PERSONAL PROJECT</span>
+                  <span className="border border-white/10 text-white/40 text-[9px] font-black px-3 py-1 uppercase tracking-widest">ESP32 · IoT · CV</span>
+                </div>
+              </div>
+              <div className="md:flex-1 ml-12 md:ml-0 md:pl-8 relative group cursor-pointer w-full max-w-md">
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl mix-blend-overlay z-10"></div>
+                <img src="/batch25_eve_plant.jpg" alt="Eve robo plant" className="bg-neutral-900 w-full aspect-[4/3] object-cover rounded-xl border border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] grayscale group-hover:grayscale-0" />
+              </div>
+            </div>
+
+            {/* Timeline Item 7 — Signal Protocol */}
+            <div className="relative group flex flex-col md:flex-row gap-12 items-start md:items-center">
+              <div className="absolute -left-[5px] md:-left-[5px] top-6 md:top-1/2 md:-translate-y-1/2 w-6 h-6 bg-black border-2 border-primary rotate-45 group-hover:bg-primary transition-all duration-300 z-10 shadow-[0_0_20px_rgba(0,255,65,0.4)]"></div>
+              <div className="ml-12 md:ml-20 flex-1 bg-[#111111] p-8 rounded-2xl border border-white/5 hover:border-primary/40 transition-colors shadow-2xl relative overflow-hidden md:order-2">
+                <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                  <span className="font-headline text-9xl italic font-black">07</span>
+                </div>
+                <div className="flex flex-col gap-2 relative z-10">
+                  <span className="font-label text-[10px] text-primary tracking-widest uppercase font-bold">MSc_Batch_2025-27 // NOV 2025 // CTF CHALLENGE</span>
+                  <h4 className="font-headline text-3xl font-bold tracking-tight text-white uppercase italic">SIGNAL PROTOCOL</h4>
+                  <p className="font-body text-on-surface-variant leading-relaxed max-w-xl">A high-octane CTF-inspired challenge where participants navigate complex hardware and software puzzles to reach a final "System Root". Not a scavenger hunt — a battle of multidisciplinary skill, awareness, and creativity. <span className="text-primary font-bold">Won the prize. 🏆</span></p>
+                </div>
+                <div className="flex gap-2 mt-4">
+                  <span className="border border-primary/30 text-primary text-[9px] font-black px-3 py-1 uppercase tracking-widest bg-primary/10">NOV 25, 2025</span>
+                  <span className="border border-primary/40 text-primary text-[9px] font-black px-3 py-1 uppercase tracking-widest bg-primary/5">🏆 PRIZE WIN</span>
+                </div>
+              </div>
+              <div className="md:flex-1 ml-12 md:ml-0 md:pr-8 relative group cursor-pointer w-full max-w-md md:order-1">
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl mix-blend-overlay z-10"></div>
+                <img src="/batch25_trophy.jpg" alt="Signal Protocol prize win" className="bg-neutral-900 w-full aspect-[4/3] object-cover object-center rounded-xl border border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] grayscale group-hover:grayscale-0" />
+              </div>
+            </div>
+
+
+            {/* Timeline Item 6 — Current/Live */}
             <div className="relative group flex flex-col md:flex-row gap-12 items-start md:items-center">
               <div className="absolute -left-[5px] md:-left-[5px] top-6 md:top-1/2 md:-translate-y-1/2 w-6 h-6 bg-primary rotate-45 animate-pulse z-10 shadow-[0_0_20px_rgba(0,255,65,0.8)]"></div>
               
@@ -273,7 +343,7 @@ export default function Arena() {
               </div>
               
               <div className="md:flex-1 ml-12 md:ml-0 md:pl-8 opacity-0 hidden md:block">
-                {/* Spacer to keep balance for the fifth item */}
+                {/* Spacer to keep balance for the final item */}
               </div>
             </div>
 
