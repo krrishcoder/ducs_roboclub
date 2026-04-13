@@ -1,4 +1,6 @@
 export default function Join() {
+  const registrationLink = 'https://unstop.com/o/FlQT5u7?lb=cdGChHz&utm_medium=Share&utm_source=competitions&utm_campaign=Krishkum6130';
+
   return (
     <main className="min-h-screen pt-24 pb-32 px-6 tech-grid">
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -40,13 +42,18 @@ export default function Join() {
             </div>
             
             <div className="relative z-10">
-              <button className="mechanical-button-3d">
+              <a
+                href={registrationLink}
+                target="_blank"
+                rel="noreferrer"
+                className="mechanical-button-3d inline-block"
+              >
                 <span className="button-edge"></span>
                 <span className="button-front flex items-center justify-between">
                   <span className="font-headline tracking-tighter uppercase">ACCESS UNSTOP PORTAL</span>
                   <span className="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
                 </span>
-              </button>
+              </a>
             </div>
           </div>
 

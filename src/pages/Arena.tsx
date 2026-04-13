@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 
 export default function Arena() {
+  const registrationLink = 'https://unstop.com/o/FlQT5u7?lb=cdGChHz&utm_medium=Share&utm_source=competitions&utm_campaign=Krishkum6130';
   const fitTextRef = useRef<HTMLSpanElement>(null);
   const [isNeuroSitGalleryOpen, setIsNeuroSitGalleryOpen] = useState(false);
 
@@ -86,10 +87,15 @@ export default function Arena() {
           </div>
 
           <div className="flex flex-col items-center gap-10">
-            <button className="btn-3d px-16 py-6 bg-primary text-black font-headline font-black text-2xl tracking-tighter uppercase rounded shadow-tactile hover:brightness-110 transition-all flex items-center gap-4">
+            <a
+              href={registrationLink}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-3d px-16 py-6 bg-primary text-black font-headline font-black text-2xl tracking-tighter uppercase rounded shadow-tactile hover:brightness-110 transition-all flex items-center gap-4"
+            >
               REGISTER NOW
               <span className="material-symbols-outlined font-bold" data-icon="arrow_forward">arrow_forward</span>
-            </button>
+            </a>
             <div className="flex items-center gap-4 text-primary font-label text-xs tracking-[0.2em] uppercase font-bold opacity-80">
               <span className="material-symbols-outlined animate-pulse text-sm" data-icon="sensors">sensors</span>
               SYSTEM READY // TRANSMISSION ACTIVE
@@ -100,7 +106,12 @@ export default function Arena() {
 
       <section className="max-w-7xl mx-auto px-6 py-32 grid grid-cols-1 md:grid-cols-12 gap-8">
         {/* Current Event Card */}
-        <div className="md:col-span-6 bg-[#111111] p-10 rounded-2xl border border-white/5 flex flex-col justify-between shadow-2xl">
+        <a
+          href={registrationLink}
+          target="_blank"
+          rel="noreferrer"
+          className="md:col-span-6 bg-[#111111] p-10 rounded-2xl border border-white/5 flex flex-col justify-between shadow-2xl hover:border-primary/30 transition-colors"
+        >
           <div>
             <h3 className="font-label text-[10px] text-primary uppercase tracking-[0.4em] mb-8 font-black flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
@@ -114,7 +125,7 @@ export default function Arena() {
             <span className="material-symbols-outlined text-primary" data-icon="calendar_month">calendar_month</span>
             <span className="tracking-widest font-bold text-primary">REGISTER NOW</span>
           </div>
-        </div>
+        </a>
 
         <div className="md:col-span-6 bg-[#111111] p-10 rounded-2xl border border-white/5 flex flex-col justify-between shadow-2xl">
           <div>

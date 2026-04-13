@@ -1,4 +1,6 @@
 export default function Intel() {
+  const registrationLink = 'https://unstop.com/o/FlQT5u7?lb=cdGChHz&utm_medium=Share&utm_source=competitions&utm_campaign=Krishkum6130';
+
   return (
     <main className="pt-32 px-6 max-w-7xl mx-auto pb-20">
       <section className="mb-16 relative">
@@ -42,10 +44,15 @@ export default function Intel() {
           </div>
           
           <div className="mt-8 flex flex-wrap gap-4">
-            <button className="bg-primary/10 hover:bg-primary/20 border border-primary/30 text-primary font-label text-xs uppercase tracking-widest px-6 py-3 rounded transition-all flex items-center gap-2">
+            <a
+              href={registrationLink}
+              target="_blank"
+              rel="noreferrer"
+              className="bg-primary/10 hover:bg-primary/20 border border-primary/30 text-primary font-label text-xs uppercase tracking-widest px-6 py-3 rounded transition-all flex items-center gap-2"
+            >
               <span className="material-symbols-outlined text-[16px] animate-pulse">app_registration</span>
-              Register (Coming Soon)
-            </button>
+              Register on Unstop
+            </a>
           </div>
           
           <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-primary/30"></div>
