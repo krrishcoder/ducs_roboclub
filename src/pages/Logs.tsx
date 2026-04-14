@@ -116,6 +116,24 @@ export default function Logs() {
               </div>
             </div>
 
+            <div className="relative group opacity-60 hover:opacity-100 transition-opacity">
+              <div className="absolute -left-[20px] top-6 w-3 h-3 bg-black border border-primary/50 group-hover:border-primary transition-all duration-300 z-10 rotate-45"></div>
+              <div className="kinetic-border bg-surface-container-low/10 p-6 backdrop-blur-sm group-hover:bg-primary/5 transition-colors border-primary/10">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <div className="flex flex-col gap-1">
+                    <span className="font-label text-[10px] text-primary/70 font-black tracking-[0.2em] flex items-center gap-2">
+                      <span className="w-1 h-1 bg-primary/70"></span> APRIL 12, 2026
+                    </span>
+                    <h4 className="font-headline text-xl font-bold tracking-tight uppercase text-primary/80 italic">SIGNAL_LINKUP</h4>
+                    <p className="font-body text-[13px] text-on-surface-variant font-medium leading-relaxed">Signal Protocol registration channel activated on Unstop.</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="border border-primary/30 text-primary/70 text-[9px] font-black px-3 py-1 uppercase tracking-widest bg-primary/5">HIST_LOG</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* 10:30 AM entry */}
             <div className="relative group">
               <div className="absolute -left-[20px] top-6 w-3 h-3 bg-black border border-primary group-hover:bg-primary transition-all duration-300 z-10 rotate-45"></div>
@@ -269,6 +287,73 @@ export default function Logs() {
             </div>
             <div className="flex flex-wrap gap-2">
               {['Autonomous', 'No Intersections', 'PID Control', 'Differential Drive'].map(tag => (
+                <span key={tag} className="font-mono text-[8px] border border-primary/30 text-primary/70 px-2 py-0.5 uppercase bg-primary/5">{tag}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-8 flex flex-col gap-6">
+        <div className="flex items-center gap-4 border-b border-primary/20 pb-4">
+          <div className="relative">
+            <span className="material-symbols-outlined text-primary text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>memory</span>
+            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-primary rounded-full animate-ping"></span>
+          </div>
+          <div className="flex flex-col">
+            <span className="font-label text-[9px] tracking-[0.3em] text-primary uppercase font-bold">CURRENT EVENT // REGISTRATION OPEN</span>
+            <h3 className="font-headline text-3xl font-black tracking-tighter italic text-primary uppercase">SIGNAL PROTOCOL</h3>
+          </div>
+          <span className="ml-auto bg-primary text-black font-label text-[9px] font-black px-3 py-1.5 uppercase tracking-widest animate-pulse">● LIVE</span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="glass-card p-6 rounded-xl border-l-[3px] border-primary col-span-1 flex flex-col gap-4">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-primary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>confirmation_number</span>
+              <span className="font-label text-[9px] text-primary uppercase tracking-widest font-bold">EVENT DETAILS</span>
+            </div>
+            <div className="flex flex-col gap-3">
+              <div>
+                <p className="font-label text-[9px] text-primary/50 uppercase tracking-widest">FEST</p>
+                <p className="font-headline text-xl font-black text-white uppercase italic">SANKALAN 2026</p>
+              </div>
+              <div>
+                <p className="font-label text-[9px] text-primary/50 uppercase tracking-widest">DATE</p>
+                <p className="font-body text-white font-semibold">April 24–25, 2026</p>
+              </div>
+              <div>
+                <p className="font-label text-[9px] text-primary/50 uppercase tracking-widest">VENUE</p>
+                <p className="font-body text-white/70 text-sm">Dept. of Computer Science, University of Delhi</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="glass-card p-6 rounded-xl col-span-1 md:col-span-2 flex flex-col gap-5">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-primary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>encrypted</span>
+              <span className="font-label text-[9px] text-primary uppercase tracking-widest font-bold">MISSION BRIEF</span>
+            </div>
+            <p className="font-body text-on-surface-variant leading-relaxed">
+              Signal Protocol is a live, CTF-inspired systems challenge where teams solve hardware and software puzzles, decode clues, scan offline QR payloads, and progress through layered missions toward the final root.
+            </p>
+            <div className="grid grid-cols-2 gap-3 border-t border-white/5 pt-4">
+              {[
+                { label: 'Team Size', value: '2-3 members' },
+                { label: 'Eligibility', value: "Bachelor's / Master's" },
+                { label: 'Knowledge', value: 'Computer Systems + IoT' },
+                { label: 'Device', value: 'Offline QR scanning phone' },
+                { label: 'AI Tools', value: 'Not allowed' },
+                { label: 'Fair Play', value: 'No inter-team sharing' },
+              ].map(({ label, value }) => (
+                <div key={label} className="flex flex-col gap-0.5">
+                  <span className="font-label text-[8px] text-primary/50 uppercase tracking-widest">{label}</span>
+                  <span className="font-body text-white text-sm font-semibold">{value}</span>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {['CTF Flow', 'Offline QR', 'IoT Logic', 'Zero AI Assistance'].map(tag => (
                 <span key={tag} className="font-mono text-[8px] border border-primary/30 text-primary/70 px-2 py-0.5 uppercase bg-primary/5">{tag}</span>
               ))}
             </div>

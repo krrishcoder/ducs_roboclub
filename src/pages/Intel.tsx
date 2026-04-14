@@ -1,5 +1,6 @@
 export default function Intel() {
   const registrationLink = 'https://unstop.com/o/FlQT5u7?lb=cdGChHz&utm_medium=Share&utm_source=competitions&utm_campaign=Krishkum6130';
+  const signalProtocolLink = 'https://unstop.com/o/ocEPIfY?utm_medium=Share&utm_source=competitions&utm_campaign=Logged_out_user';
 
   return (
     <main className="pt-32 px-6 max-w-7xl mx-auto pb-20">
@@ -187,6 +188,135 @@ export default function Intel() {
                   <div className="font-mono text-sm text-white/80">E-Certificate</div>
                 </div>
              </div>
+          </div>
+        </div>
+      </div>
+
+      <section className="mb-16 relative">
+        <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-primary/5 rounded-full blur-[120px]"></div>
+        <div className="relative z-10">
+          <div className="flex items-baseline gap-4 mb-2">
+            <span className="text-primary font-label text-[10px] tracking-[0.3em] uppercase">SYSTEM_STATUS: ENCRYPTED</span>
+            <div className="h-[1px] flex-grow bg-primary/10"></div>
+          </div>
+          <h2 className="text-5xl md:text-7xl font-headline font-bold tracking-tighter uppercase text-on-surface mb-4 neon-text-primary">SIGNAL PROTOCOL</h2>
+          <p className="text-on-surface-variant max-w-2xl font-body leading-relaxed text-lg border-l-2 border-primary/30 pl-6">
+            Enter a live, CTF-inspired systems challenge built around clues, QR extraction, logic, and IoT awareness. Teams must decode each layer under strict fair-play conditions to reach the final root.
+          </p>
+        </div>
+      </section>
+
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-16">
+        <div className="md:col-span-8 glass-card rounded-lg overflow-hidden flex flex-col p-8 relative">
+          <div className="flex justify-between items-start mb-8">
+            <div className="flex items-center gap-3">
+              <span className="material-symbols-outlined text-primary text-3xl neon-text-primary" data-icon="memory">memory</span>
+              <h3 className="font-headline text-2xl font-bold uppercase tracking-tight text-on-surface">Signal Protocol - 2026</h3>
+            </div>
+            <span className="font-label text-[10px] text-primary/50 tracking-widest block">LIVE_OPS</span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+            <div className="flex flex-col gap-2">
+              <span className="font-label text-xs text-primary/70 uppercase tracking-widest">Venue</span>
+              <a href="https://maps.app.goo.gl/A2ofjeLv3ZwY7ewP8" target="_blank" rel="noreferrer" className="font-body text-on-surface text-lg hover:text-primary transition-colors flex items-start gap-2 group">
+                <span className="group-hover:underline">Department of Computer Science,<br />University of Delhi</span>
+                <span className="material-symbols-outlined text-[14px] mt-1">open_in_new</span>
+              </a>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="font-label text-xs text-primary/70 uppercase tracking-widest">Time &amp; Date</span>
+              <span className="font-body text-on-surface text-lg">April 24-25, 2026</span>
+              <span className="font-body text-on-surface-variant">Signal Protocol Arena</span>
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a
+              href={signalProtocolLink}
+              target="_blank"
+              rel="noreferrer"
+              className="bg-primary/10 hover:bg-primary/20 border border-primary/30 text-primary font-label text-xs uppercase tracking-widest px-6 py-3 rounded transition-all flex items-center gap-2"
+            >
+              <span className="material-symbols-outlined text-[16px] animate-pulse">app_registration</span>
+              Register on Unstop
+            </a>
+          </div>
+
+          <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-primary/30"></div>
+          <div className="absolute bottom-0 right-0 w-32 h-32 bg-primary/5 rounded-tl-full blur-xl pointer-events-none"></div>
+        </div>
+
+        <div className="md:col-span-4 glass-card p-8 rounded-lg flex flex-col justify-center relative overflow-hidden group">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="relative z-10 space-y-6">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="material-symbols-outlined text-primary text-xl">qr_code_scanner</span>
+              <h3 className="font-label text-xs tracking-[0.2em] text-primary uppercase font-bold">Mission Specs</h3>
+            </div>
+
+            <div className="flex justify-between items-center">
+              <span className="font-body text-sm text-on-surface-variant">TEAM SIZE</span>
+              <span className="font-headline text-2xl text-primary neon-text-primary">2-3</span>
+            </div>
+            <div className="h-px bg-primary/10"></div>
+            <div className="flex justify-between items-center">
+              <span className="font-body text-sm text-on-surface-variant">ELIGIBILITY</span>
+              <span className="font-headline text-base text-on-surface text-right">Bachelor&apos;s / Master&apos;s</span>
+            </div>
+            <div className="h-px bg-primary/10"></div>
+            <div className="flex justify-between items-center gap-4">
+              <span className="font-body text-sm text-on-surface-variant">DOMAIN</span>
+              <span className="font-headline text-base text-on-surface text-right">Computer Systems &amp; IoT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-16">
+        <h3 className="text-3xl font-headline font-bold uppercase tracking-tight text-on-surface mb-8 border-b border-primary/20 pb-4 flex items-center gap-3">
+          <span className="material-symbols-outlined text-primary">encrypted</span> SIGNAL PROTOCOL RULEBOOK
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="glass-card p-8 rounded-lg flex flex-col h-full hover:border-primary/30 transition-colors">
+            <h4 className="font-headline text-xl uppercase tracking-widest text-primary mb-6 flex items-center gap-2">
+              <span className="material-symbols-outlined">badge</span> Eligibility
+            </h4>
+            <ul className="space-y-4 font-body text-sm">
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Team size</span><span className="text-white font-mono">Min 2, max 3</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Student status</span><span className="text-white font-mono text-right max-w-[220px]">Regular bachelor&apos;s or master&apos;s student</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Required knowledge</span><span className="text-white font-mono text-right max-w-[220px]">Computer systems and IoT</span></li>
+              <li className="flex justify-between pt-1"><span className="text-on-surface-variant">Required device</span><span className="text-white font-mono text-right max-w-[220px]">Phone that can read offline QR codes and extract text</span></li>
+            </ul>
+          </div>
+
+          <div className="glass-card p-8 rounded-lg flex flex-col h-full hover:border-primary/30 transition-colors">
+            <h4 className="font-headline text-xl uppercase tracking-widest text-primary mb-6 flex items-center gap-2">
+              <span className="material-symbols-outlined">groups</span> Fair Play Protocol
+            </h4>
+            <ul className="space-y-4 font-body text-sm">
+              <li className="flex flex-col border-b border-white/5 pb-3">
+                <span className="text-white font-bold mb-1">No team interaction or clue sharing</span>
+                <span className="text-on-surface-variant leading-relaxed">Do not interact with other teams or share any game-related information. Volunteers will be available if your team needs help.</span>
+              </li>
+              <li className="flex flex-col border-b border-white/5 pb-3">
+                <span className="text-white font-bold mb-1">AI tools are prohibited</span>
+                <span className="text-on-surface-variant leading-relaxed">ChatGPT and any other AI-based systems are not allowed. Teams will be required to switch off internet access before the game begins.</span>
+              </li>
+              <li className="flex flex-col pt-1">
+                <span className="text-white font-bold mb-1">Strict enforcement</span>
+                <span className="text-on-surface-variant leading-relaxed">There will be no warnings. Any team caught breaking the rules will be disqualified. Interaction with other teams will be treated as information sharing, and both teams may be eliminated to preserve fair play.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="md:col-span-2 glass-card p-8 rounded-lg flex flex-col h-full border-l-[3px] border-l-red-500/50 hover:border-l-red-500 transition-colors">
+            <h4 className="font-headline text-xl uppercase tracking-widest text-red-500 mb-6 flex items-center gap-2">
+              <span className="material-symbols-outlined">gpp_bad</span> Disqualification Notice
+            </h4>
+            <p className="font-body text-on-surface-variant leading-relaxed max-w-4xl">
+              Signal Protocol is designed as a tightly controlled challenge environment. Any breach involving external assistance, AI usage, or team-to-team information exchange will be treated as a direct violation of the competition rules and can result in immediate elimination without warning.
+            </p>
           </div>
         </div>
       </div>

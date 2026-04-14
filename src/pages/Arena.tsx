@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 
 export default function Arena() {
   const registrationLink = 'https://unstop.com/o/FlQT5u7?lb=cdGChHz&utm_medium=Share&utm_source=competitions&utm_campaign=Krishkum6130';
+  const signalProtocolLink = 'https://unstop.com/o/ocEPIfY?utm_medium=Share&utm_source=competitions&utm_campaign=Logged_out_user';
   const fitTextRef = useRef<HTMLSpanElement>(null);
   const [isNeuroSitGalleryOpen, setIsNeuroSitGalleryOpen] = useState(false);
 
@@ -127,7 +128,12 @@ export default function Arena() {
           </div>
         </a>
 
-        <div className="md:col-span-6 bg-[#111111] p-10 rounded-2xl border border-white/5 flex flex-col justify-between shadow-2xl">
+        <a
+          href={signalProtocolLink}
+          target="_blank"
+          rel="noreferrer"
+          className="md:col-span-6 bg-[#111111] p-10 rounded-2xl border border-white/5 flex flex-col justify-between shadow-2xl hover:border-primary/30 transition-colors"
+        >
           <div>
             <h3 className="font-label text-[10px] text-primary uppercase tracking-[0.4em] mb-8 font-black flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
@@ -143,7 +149,7 @@ export default function Arena() {
             <span className="material-symbols-outlined text-primary" data-icon="confirmation_number">confirmation_number</span>
             <span className="tracking-widest font-bold text-primary">REGISTER NOW</span>
           </div>
-        </div>
+        </a>
 
         {/* Prize Pool Card */}
         <div className="md:col-span-12 bg-[#111111] p-10 rounded-2xl relative overflow-hidden group border border-white/5 shadow-2xl transition-all hover:border-primary/30">
