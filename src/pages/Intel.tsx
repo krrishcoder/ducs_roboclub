@@ -257,7 +257,7 @@ export default function Intel() {
 
             <div className="flex justify-between items-center">
               <span className="font-body text-sm text-on-surface-variant">TEAM SIZE</span>
-              <span className="font-headline text-2xl text-primary neon-text-primary">2-3</span>
+              <span className="font-headline text-2xl text-primary neon-text-primary">2-4</span>
             </div>
             <div className="h-px bg-primary/10"></div>
             <div className="flex justify-between items-center">
@@ -283,7 +283,7 @@ export default function Intel() {
               <span className="material-symbols-outlined">badge</span> Eligibility
             </h4>
             <ul className="space-y-4 font-body text-sm">
-              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Team size</span><span className="text-white font-mono">Min 2, max 3</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Team size</span><span className="text-white font-mono">Min 2, max 4</span></li>
               <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Student status</span><span className="text-white font-mono text-right max-w-[220px]">Regular bachelor&apos;s or master&apos;s student</span></li>
               <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Required knowledge</span><span className="text-white font-mono text-right max-w-[220px]">Computer systems and IoT</span></li>
               <li className="flex justify-between pt-1"><span className="text-on-surface-variant">Required device</span><span className="text-white font-mono text-right max-w-[220px]">Phone that can read offline QR codes and extract text</span></li>

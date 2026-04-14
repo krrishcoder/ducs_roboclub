@@ -339,7 +339,7 @@ export default function Logs() {
             </p>
             <div className="grid grid-cols-2 gap-3 border-t border-white/5 pt-4">
               {[
-                { label: 'Team Size', value: '2-3 members' },
+                { label: 'Team Size', value: '2-4 members' },
                 { label: 'Eligibility', value: "Bachelor's / Master's" },
                 { label: 'Knowledge', value: 'Computer Systems + IoT' },
                 { label: 'Device', value: 'Offline QR scanning phone' },
