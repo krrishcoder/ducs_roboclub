@@ -120,7 +120,7 @@ export default function Intel() {
               <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Line color</span><span className="text-white font-mono">Black on white surface</span></li>
               <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Line width</span><span className="text-white font-mono">2 - 3 cm</span></li>
               <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Track features</span><span className="text-white font-mono text-right max-w-[180px]">Curves, 90° turns, 120° curves</span></li>
-              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Intersections</span><span className="text-white font-mono">None</span></li>
+              <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Intersections</span><span className="text-primary font-mono">Yes</span></li>
               <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Surface</span><span className="text-white font-mono">Flex sheet</span></li>
               <li className="flex justify-between border-b border-white/5 pb-2"><span className="text-on-surface-variant">Timing</span><span className="text-white font-mono">Fastest</span></li>
               <li className="flex justify-between pt-1"><span className="text-on-surface-variant">Test Track</span><span className="text-primary font-mono">Yes</span></li>

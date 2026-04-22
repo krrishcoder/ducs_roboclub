@@ -268,7 +268,7 @@ export default function Logs() {
               <span className="font-label text-[9px] text-primary uppercase tracking-widest font-bold">MISSION BRIEF</span>
             </div>
             <p className="font-body text-on-surface-variant leading-relaxed">
-              Build a fully autonomous robot that follows a <strong className="text-white">black line (2–3 cm wide) on a white flex-sheet surface</strong> — navigating curves, 90° turns, and 120° curves with no intersections. No remote control. No pre-built kits. Fastest completion time wins.
+              Build a fully autonomous robot that follows a <strong className="text-white">black line (2–3 cm wide) on a white flex-sheet surface</strong> — navigating curves, 90° turns, and 120° curves with intersections. No remote control. No pre-built kits. Fastest completion time wins.
             </p>
             <div className="grid grid-cols-2 gap-3 border-t border-white/5 pt-4">
               {[
@@ -286,7 +286,7 @@ export default function Logs() {
               ))}
             </div>
             <div className="flex flex-wrap gap-2">
-              {['Autonomous', 'No Intersections', 'PID Control', 'Differential Drive'].map(tag => (
+              {['Autonomous', 'Intersections: Yes', 'PID Control', 'Differential Drive'].map(tag => (
                 <span key={tag} className="font-mono text-[8px] border border-primary/30 text-primary/70 px-2 py-0.5 uppercase bg-primary/5">{tag}</span>
               ))}
             </div>
